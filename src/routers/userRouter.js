@@ -37,12 +37,23 @@ router.post('/api/user', async (req, res) => {
   }
 })
 
+router.post('/api/user/login', async (req, res) => {
+  try {
+    const user = await User.findByCredentials(req.body.email, req.body.password)
+    const token = await user.generateAuthToken()
+    res.send({user, token})
+  } catch(e) {
+    res.status(404).send()
+    console.log(e)
+  }
+})
+
 router.patch('/api/user', async (req, res) => {
   try {
     const user = await User.findById(req.body._id)
-    const updatedUser = req.body
-    console.log({...user, ...updatedUser})
-    // const user = await User.findByIdAndUpdate(req.body._id, req.body, { new: true, runValidators: true, useFindAndModify: false })
+    const updatedUser = Object.keys(req.body)
+    updatedUser.forEach(key => user[key] = req.body[key])
+    await user.save()
 
     if (!user) res.status(404).send()
 
