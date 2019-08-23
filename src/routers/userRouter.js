@@ -48,6 +48,19 @@ router.post('/api/user/login', async (req, res) => {
   }
 })
 
+router.post('/api/user/signup', async (req, res) => {
+  const user = new User(req.body)
+
+  try {
+    await user.save()
+    const token = await user.generateAuthToken()
+    res.send({user, token})
+  } catch(e) {
+    res.status(404).send()
+    console.log(e)
+  }
+})
+
 router.patch('/api/user', async (req, res) => {
   try {
     const user = await User.findById(req.body._id)
