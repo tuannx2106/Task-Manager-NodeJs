@@ -1,0 +1,198 @@
+{
+	"variables": [],
+	"info": {
+		"name": "task manager",
+		"_postman_id": "0fd67680-b427-879e-4977-603519bb5772",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "task",
+			"description": "",
+			"item": [
+				{
+					"name": "1 task",
+					"request": {
+						"url": "localhost:3000/api/task/5d5a51d741b19f45c84507ef",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "add task",
+					"request": {
+						"url": "localhost:3000/api/task",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\" : \"eating\",\n\t\"completed\": false\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "all tasks",
+					"request": {
+						"url": "localhost:3000/api/tasks",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"url": "localhost:3000/api/task",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"completed\": true,\n        \"_id\": \"5d5a51d741b19f45c84507ef\",\n        \"title\": \"adassssssdasd\",\n        \"__v\": 0,\n        \"bombom\": \"sdasd\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete task",
+					"request": {
+						"url": "localhost:3000/api/task/5d5a52379616e34641cba347",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "all user",
+					"request": {
+						"url": "localhost:3000/api/users",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "1 user",
+					"request": {
+						"url": "localhost:3000/api/user/5d4cdc518489f6126282b8b4",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"url": "localhost:3000/api/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\n        \"age\": 20,\n        \"name\": \"Quynh\",\n        \"email\": \"quynhf@gmail.com\",\n        \"password\": \"12345678\",\n        \"__v\": 0\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"url": "localhost:3000/api/user",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"age\": 22,\n        \"_id\": \"5d5e1a6de776b62e66f9ba53\",\n        \"name\": \"Nguyen Xuan Tuan\",\n        \"__v\": 0\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"url": "localhost:3000/api/user/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\n        \"email\": \"jackm@gmail.com\",\n        \"password\": \"12345678\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "sign up",
+					"request": {
+						"url": "localhost:3000/api/user/signup",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"age\": 28,\n    \"name\": \"vanessahudgen\",\n    \"email\": \"vanessavanilla@gmail.com\",\n    \"password\": \"12345678\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
