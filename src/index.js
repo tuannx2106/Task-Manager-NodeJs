@@ -27,3 +27,5 @@ app.get('/*', (req, res) => {
 app.listen(port, () => {
   console.log('Server started on port ' + port)
 })
+
+// https://www.getpostman.com/collections/89b386501df8eb059ba6
