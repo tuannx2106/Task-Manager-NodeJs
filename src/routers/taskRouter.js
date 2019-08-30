@@ -8,13 +8,17 @@ router.get('/api/tasks', auth, async (req, res) => {
     // const tasks = await Task.find({owner: req.user._id})
 
     // if(!tasks.length) return res.status(404).send()
-    const { completed } = req.query
+    const { completed, sortBy } = req.query
 
     const match = {
       completed: completed === 'true'
     }
 
     const sort = {}
+    if (sortBy) {
+      const parts = sortBy.split(':')
+      sort[parts[0]] = parts[1] === 'desc' ? -1 : 1
+    }
 
     await req.user.populate({
       path: 'tasks',
@@ -22,9 +26,7 @@ router.get('/api/tasks', auth, async (req, res) => {
       options: {
         limit: parseInt(req.query.limit),
         skip: parseInt(req.query.skip),
-        sort: {
-          createdAt: -1
-        }
+        sort
       }
     }).execPopulate()
     res.status(200).send(req.user.tasks)
