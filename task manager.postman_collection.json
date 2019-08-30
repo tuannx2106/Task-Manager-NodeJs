@@ -389,6 +389,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"value": null,
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/user/me/avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me",
+								"avatar"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
