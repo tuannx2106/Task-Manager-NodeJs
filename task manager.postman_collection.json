@@ -1,86 +1,121 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "2b26e5fc-525c-4524-bd24-459cda250a4d",
 		"name": "task manager",
-		"_postman_id": "0fd67680-b427-879e-4977-603519bb5772",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "task",
-			"description": "",
 			"item": [
 				{
 					"name": "1 task",
 					"request": {
-						"url": "localhost:3000/api/task/5d5a51d741b19f45c84507ef",
 						"method": "GET",
 						"header": [],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/task/5d64b3f003488423fe78e578",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"5d64b3f003488423fe78e578"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "add task",
 					"request": {
-						"url": "localhost:3000/api/task",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\" : \"eating\",\n\t\"completed\": false\n}"
+							"raw": "{\n\t\"title\" : \"test task 3 for user quynhf\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"task"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "all tasks",
 					"request": {
-						"url": "localhost:3000/api/tasks",
 						"method": "GET",
 						"header": [],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "update task",
 					"request": {
-						"url": "localhost:3000/api/task",
 						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"completed\": true,\n        \"_id\": \"5d5a51d741b19f45c84507ef\",\n        \"title\": \"adassssssdasd\",\n        \"__v\": 0,\n        \"bombom\": \"sdasd\"\n    }"
+							"raw": "{\n        \"title\": \"Quynhf make up\"\n    }"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/task/5d64b3f003488423fe78e578",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"5d64b3f003488423fe78e578"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "delete task",
 					"request": {
-						"url": "localhost:3000/api/task/5d5a52379616e34641cba347",
 						"method": "DELETE",
 						"header": [],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/task/5d660a16be014d2eb6afa6ae",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"5d660a16be014d2eb6afa6ae"
+							]
+						}
 					},
 					"response": []
 				}
@@ -88,111 +123,336 @@
 		},
 		{
 			"name": "user",
-			"description": "",
 			"item": [
 				{
 					"name": "all user",
 					"request": {
-						"url": "localhost:3000/api/users",
 						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDVlMWE2ZGU3NzZiNjJlNjZmOWJhNTMiLCJpYXQiOjE1NjY3OTEzMDF9.bMK69OpxY5fJRKAMnVxUfbMftxMhR8TIfQn-skLH0so"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "1 user",
 					"request": {
-						"url": "localhost:3000/api/user/5d4cdc518489f6126282b8b4",
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "localhost:3000/api/user/5d4cdc518489f6126282b8b4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"5d4cdc518489f6126282b8b4"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "add user",
 					"request": {
-						"url": "localhost:3000/api/user",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "\t{\n        \"age\": 20,\n        \"name\": \"Quynh\",\n        \"email\": \"quynhf@gmail.com\",\n        \"password\": \"12345678\",\n        \"__v\": 0\n    }"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "edit user",
 					"request": {
-						"url": "localhost:3000/api/user",
 						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"age\": 22,\n        \"_id\": \"5d5e1a6de776b62e66f9ba53\",\n        \"name\": \"Nguyen Xuan Tuan\",\n        \"__v\": 0\n    }"
+							"raw": "{\n        \"age\": 23,\n        \"name\": \"Nguyễn Xuân Tuấn\"\n    }"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cc7da1fd-cb76-41f3-a86e-a228576a67d4",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    pm.environment.set('authToken', pm.response.json().token)",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
-						"url": "localhost:3000/api/user/login",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\t{\n        \"email\": \"jackm@gmail.com\",\n        \"password\": \"12345678\"\n    }"
+							"raw": "\t{\n        \"email\": \"xuantuan@gmail.com\",\n        \"password\": \"12345678\"\n    }"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "sign up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84d1240c-19cb-466c-9af7-7f2ee6804089",
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    pm.environment.set('authToken', pm.response.json().token)",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
-						"url": "localhost:3000/api/user/signup",
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"age\": 28,\n    \"name\": \"vanessahudgen\",\n    \"email\": \"vanessavanilla@gmail.com\",\n    \"password\": \"12345678\"\n}"
+							"raw": "{\n    \"age\": 22,\n    \"name\": \"Nguyen Xuan Tuan\",\n    \"email\": \"xuantuan@gmail.com\",\n    \"password\": \"12345678\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "{{url}}/api/user/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/logout/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/logout/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete me",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"value": null,
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/user/me/avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me",
+								"avatar"
+							]
+						}
 					},
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cb9915f5-cb78-4092-b196-c3111606c9d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9a9f36f0-0bd4-4e94-869d-9d6cc0869118",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
